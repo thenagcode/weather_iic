@@ -20,12 +20,15 @@ body{
     border-radius: 22px;
     padding: 40px 35px;
     text-align: center;
+    z-index: 1;
 }
 .search{
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 2;
+    position: relative;
 }
 .search input{
     border: 0;
@@ -46,11 +49,12 @@ body{
     width: 60px;
     height: 60px;
     cursor: pointer;
-    padding: 17px;
+    padding: 19px;
 }
 .weather_icon{
     width: 170px;
     margin-top: 30px;
+    margin-left: 110px;
 }
 .weather h1{
     font-size: 80px;
@@ -80,4 +84,57 @@ body{
 .humidity, .wind{
     font-size: 30px;
     margin-top: -6px;
+}
+/* Media Query for Responsiveness */
+@media (max-width: 768px) {
+    #card {
+        padding: 20px 15px; /* Reduce padding on smaller screens */
+    }
+
+    .search input {
+        font-size: 18px; /* Adjust font size */
+        padding: 10px 15px; /* Reduce padding */
+    }
+
+    .weather h1 {
+        font-size: 60px; /* Smaller font size for header */
+    }
+
+    .weather h2 {
+        font-size: 35px; /* Smaller font size for subheader */
+    }
+
+    .details {
+        flex-direction: column; /* Stack details vertically */
+        align-items: center; /* Center items */
+    }
+
+    .col {
+        margin-bottom: 10px; /* Add spacing between items */
+    }
+
+    .weather_icon {
+        width: 120px; /* Smaller icon on mobile */
+    }
+
+    .humidity, .wind {
+        font-size: 24px; /* Smaller font size for humidity and wind */
+    }
+}
+
+@media (max-width: 480px) {
+    .search input {
+        font-size: 16px; /* Further reduce font size for very small screens */
+    }
+    .weather_icon {
+        width: 100px; /* Even smaller icon size for mobile */
+    }
+    .search button {
+        width: 50px; /* Smaller button */
+        height: 50px; /* Smaller button */
+        padding: 10px; /* Reduce padding */
+    }
+    #card{
+        width: "540px";
+    }
 }
