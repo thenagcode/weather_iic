@@ -46,6 +46,7 @@ body{
     width: 60px;
     height: 60px;
     cursor: pointer;
+    padding: 17px;
 }
 .weather_icon{
     width: 170px;
