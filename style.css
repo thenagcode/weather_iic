@@ -1,48 +1,49 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-body{
+
+body {
     background-color: black;
     background-image: url(./images/defbag.jpg);
-    background-size: 100%;
+    background-size: cover; /* Adjust to cover */
     z-index: -1;
 }
-#card{
-    width: 90%;
-    max-width: 500px;
-    /* background: linear-gradient(135deg, #00feba, #5b548a); */
-    filter: blur(20);
-    color: white;
-    margin: 100px auto 0;
-    border-radius: 22px;
-    padding: 40px 35px;
-    text-align: center;
-    z-index: 1;
+
+#card #pollution-card {
+    width: 100%; /* Full width in its column */
+    background-color: rgba(255, 255, 255, 0); /* Transparent background */
+    color: black; /* Text color */
+    padding: 20px; /* Padding */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow */
+    height: 300px; /* Fixed height */
 }
-.search{
-    width: 100%;
+
+.search {
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 2;
-    position: relative;
+    width: 500px;
 }
-.search input{
+
+.search input {
     border: 0;
     outline: 0;
-    background-color: #ebfffc;
+    background-color: #fdfdfd;
     color: #555;
     padding: 10px 25px;
     height: 60px;
     border-radius: 30px;
     flex: 1;
     margin-right: 16px;
-    font-size: 20px;
+    font-size: 18px;
 }
-.search button{
+
+.search button {
     border: 0;
     background-color: white;
     border-radius: 50%;
@@ -51,49 +52,81 @@ body{
     cursor: pointer;
     padding: 19px;
 }
-.weather_icon{
+
+.search button:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.1);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+#card {
+    width: 100%; /* Full width */
+    max-width: 500px; /* Limit max width */
+    filter: blur(0); /* Adjust if you want the blur effect */
+    color: white;
+    margin-top: 20px; /* Margin from search */
+    border-radius: 22px;
+    padding: 40px 35px;
+    text-align: center;
+    z-index: 1;
+}
+
+.weather_icon {
     width: 170px;
     margin-top: 30px;
-    margin-left: 110px;
+    padding-left: 50px;
 }
-.weather h1{
+
+.weather h1 {
     font-size: 80px;
     font-weight: 500;
 }
-.weather h2{
+
+.weather h2 {
     font-size: 45px;
     font-weight: 400;
     margin-top: -10px;
 }
-.details{
+
+.details {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding:0 20px;
+    padding: 0 20px;
     margin-top: 50px;
 }
-.col{
+
+.col {
     display: flex;
     align-items: center;
     text-align: center;
 }
-.col img{
+
+.col img {
     width: 40px;
     margin-right: 10px;
 }
-.humidity, .wind{
+
+.humidity,
+.wind {
     font-size: 30px;
     margin-top: -6px;
 }
+
 /* Media Query for Responsiveness */
 @media (max-width: 768px) {
-    #card {
-        padding: 20px 15px; /* Reduce padding on smaller screens */
+    .search {
+        /* flex-direction: column; Stack search elements */
+        align-items: stretch;
+        width: 350px; /* Stretch to fill container */
     }
 
     .search input {
-        font-size: 18px; /* Adjust font size */
-        padding: 10px 15px; /* Reduce padding */
+        margin-bottom: 10px; /* Space between input and button */
+    }
+
+    #card {
+        padding: 20px 15px; /* Reduce padding on smaller screens */
     }
 
     .weather h1 {
@@ -117,7 +150,8 @@ body{
         width: 120px; /* Smaller icon on mobile */
     }
 
-    .humidity, .wind {
+    .humidity,
+    .wind {
         font-size: 24px; /* Smaller font size for humidity and wind */
     }
 }
@@ -126,15 +160,18 @@ body{
     .search input {
         font-size: 16px; /* Further reduce font size for very small screens */
     }
+
     .weather_icon {
         width: 100px; /* Even smaller icon size for mobile */
     }
+
     .search button {
         width: 50px; /* Smaller button */
         height: 50px; /* Smaller button */
         padding: 10px; /* Reduce padding */
     }
-    #card{
-        width: "540px";
+
+    #card {
+        width: 100%; /* Adjusted to full width */
     }
 }
