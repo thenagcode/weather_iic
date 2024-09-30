@@ -9,7 +9,6 @@ const dynbg = "dynamicBackground"; // Assuming this is the ID of your background
 async function checkweather(city) {
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
     const data = await response.json();
-    console.log("notworking");
     console.log(data.weather[0].main);
 
     document.querySelector(".city").innerHTML = data.name;
@@ -58,11 +57,20 @@ function changeBg(bgimage) {
 }
 
 searchBtn.addEventListener("click", () => {
-    checkweather(searchBox.value);
+    var hasNumber = /\d/;   
+    if(hasNumber.test(searchBox.value))  //true
+        print_forecast(searchBox.value)
+    else
+        checkweather(searchBox.value);
+
 });
 
 searchBox.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
-        checkweather(searchBox.value);
+        var hasNumber = /\d/;   
+        if(hasNumber.test(searchBox.value))  //true
+            print_forecast(searchBox.value)
+        else
+            checkweather(searchBox.value);
     }
 });
